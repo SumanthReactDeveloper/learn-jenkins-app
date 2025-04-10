@@ -27,7 +27,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'echo "Testing Stage"' // Corrected command
+                sh 'echo "Testing Stage"' 
+                sh 'test -f build/index.html'
             }
         }
     }
