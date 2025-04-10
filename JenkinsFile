@@ -3,11 +3,11 @@ pipeline {
 
     stages {
         stage('Install Dependencies') {
-          steps {
-             sh 'rm -rf node_modules'
-             sh 'npm ci'
-    }
-}
+            steps {
+                sh 'rm -rf node_modules'
+                sh 'npm ci'
+            }
+        }
         stage('Build') {
             agent {
                 docker {
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh echo '"Testing Stage"'
+                sh 'echo "Testing Stage"' // Corrected command
             }
         }
     }
