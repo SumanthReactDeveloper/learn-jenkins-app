@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Install Dependencies') {
+          steps {
+             sh 'rm -rf node_modules'
+             sh 'npm ci'
+    }
+}
         stage('Build') {
             agent {
                 docker {
